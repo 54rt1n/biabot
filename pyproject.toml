@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "biabot"
+version = "0.1.0"
+description = "An agentic AI with Active Memory"
+authors = ["Martin <4502632+54rt1n@users.noreply.github.co>"]
+license = "Unlicense"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+chardet = "^5.2.0"
+click = "*"
+lancedb = "*"
+nltk = "*"
+numpy = "<2"
+openai = "*"
+pandas = "*"
+python-dotenv = "*"
+scikit-learn = "*"
+torch = "*"
+transformers = "*"
+watchdog = "^5.0.3"
+wonderwords = "2.2.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

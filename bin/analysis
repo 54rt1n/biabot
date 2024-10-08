@@ -1,0 +1,10 @@
+#!/bin/bash
+# we want to keep looping until we get a non-zero exit code
+while true; do
+    python -m biabot next-analysis Prax Andi --no-retry 2>&1
+    if [ $? -ne 0 ]; then
+        echo "Analysis complete"
+        break
+    fi
+    echo "Analysis successful ($?), continuing"
+done

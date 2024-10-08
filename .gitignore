@@ -1,0 +1,6 @@
+local
+__pycache__
+lancedb
+.env*
+.DS_Store
+.venv
