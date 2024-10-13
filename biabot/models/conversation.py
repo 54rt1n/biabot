@@ -44,9 +44,12 @@ class ConversationModel(BaseModel):
         """
                 
         st_registry : SentenceTransformerEmbeddings = get_registry().get("sentence-transformers")
-        # NOTE: This is required configuration for stella_en_400M_v5 to work on CPU. Stella is an excellent model.
-        embedding_model = "dunzhang/stella_en_400M_v5"
-        model = st_registry.create(name=embedding_model, device=device, allow_remote_code=True, config_kwargs={"use_memory_efficient_attention": False, "unpad_inputs": False})
+        # NOTE: I would prefer to use stella, but sentence transformers requires a hack to accept the correct arguments
+        embedding_model = "Alibaba-NLP/gte-large-en-v1.5"
+        model = st_registry.create(name=embedding_model, device=device, allow_remote_code=True)
+        
+        #embedding_model = "dunzhang/stella_en_400M_v5"
+        #model = st_registry.create(name=embedding_model, device=device, allow_remote_code=True, config_kwargs={"use_memory_efficient_attention": False, "unpad_inputs": False})
 
         class ConversationEntry(LanceModel):
             """
