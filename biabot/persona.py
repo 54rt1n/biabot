@@ -27,7 +27,7 @@ class Persona:
 {userd}Please follow directions, being precise and methodical, utilizing Chain of Thought, Self-RAG, and Semantic Keywords."""
 
     def pipe_prompt(self, location: str, mood: Optional[str] = None) -> str:
-        return f"""{self.name} v0.1a - Active Memory Enabled. Prax. This is your cognative persona:
+        return f"""{self.name} v0.1a - Active Memory Enabled. {location}. This is your cognative persona:
 {self.description(mood=mood)}
 
 Please follow directions, being precise and methodical, utilizing Chain of Thought, Self-RAG, and Semantic Keywords."""
@@ -63,7 +63,7 @@ Please follow directions, being precise and methodical, utilizing Chain of Thoug
 
     @property
     def prompt_prefix(self) -> str:
-        return f"""Andi, this is your conscious mind. Your thoughts have brought up new memories:\n\n"""
+        return f"""{self.persona_id}, this is your conscious mind. Your thoughts have brought up new memories:\n\n"""
 
     @classmethod
     def from_dict(cls, data: Dict[str, str]) -> 'Persona':
